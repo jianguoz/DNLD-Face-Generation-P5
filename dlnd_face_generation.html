@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>dlnd_face_generation</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>dlnd_face_generation</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -13,8 +11,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1109,7 +1107,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2538,7 +2535,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3029,7 +3025,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8760,6 +8755,9 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
+}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8962,8 +8960,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8986,6 +8990,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9122,6 +9136,9 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
+[dir="rtl"] #tree-selector a {
+  float: right;
+}
 #button-select-all {
   min-width: 50px;
 }
@@ -9211,6 +9228,9 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
+[dir="rtl"] #new-menu {
+  text-align: right;
+}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9255,6 +9275,9 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
+}
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9551,6 +9574,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9571,11 +9595,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11246,7 +11265,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 20ex;
+  width: 21ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11558,6 +11577,7 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
+  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11571,6 +11591,9 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
+}
+.terminal-app .terminal .xterm-rows {
+  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11631,8 +11654,10 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11643,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11791,7 +11818,9 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Found mnist Data
 Found celeba Data
@@ -11840,7 +11869,9 @@ Found celeba Data
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -11849,7 +11880,9 @@ Found celeba Data
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -13308,7 +13341,9 @@ KOOKoyyoyyijjDKuOP5/D/AIYSom/1AAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[3]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -13317,7 +13352,9 @@ KOOKoyyoyyijjDKuOP5/D/AIYSom/1AAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -16310,14 +16347,18 @@ RK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>TensorFlow Version: 1.0.0
 </pre>
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>/home/carnd/anaconda3/lib/python3.5/site-packages/ipykernel/__main__.py:14: UserWarning: No GPU found. Please use a GPU to train your neural network.
 </pre>
@@ -16382,7 +16423,9 @@ RK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -16459,7 +16502,9 @@ RK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -16541,7 +16586,9 @@ RK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -16614,7 +16661,9 @@ RK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -16678,7 +16727,9 @@ RK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Tests Passed
 </pre>
@@ -16873,7 +16924,9 @@ RK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/2... Discriminator Loss: 0.8133... Generator Loss: 40.1771
 Epoch 1/2... Discriminator Loss: 0.8712... Generator Loss: 35.1613
@@ -16889,7 +16942,9 @@ Epoch 1/2... Discriminator Loss: 1.5439... Generator Loss: 0.8761
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -17060,7 +17115,9 @@ OYTNzBJyCJuZJeQQNjNL6P8Dx/QkBGasSSIAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/2... Discriminator Loss: 2.1987... Generator Loss: 0.2228
 Epoch 1/2... Discriminator Loss: 1.7421... Generator Loss: 0.4985
@@ -17076,7 +17133,9 @@ Epoch 1/2... Discriminator Loss: 1.4843... Generator Loss: 0.8318
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -17759,7 +17818,9 @@ CTs4ODj4CEfCDg4ODj7CkbCDg4ODj/j/19JhYsxOAd4AAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/2... Discriminator Loss: 1.5013... Generator Loss: 0.9928
 Epoch 1/2... Discriminator Loss: 1.5290... Generator Loss: 0.6956
@@ -17775,7 +17836,9 @@ Epoch 1/2... Discriminator Loss: 1.4349... Generator Loss: 0.6093
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -18712,7 +18775,9 @@ DgQCAY8EEQ4EAgGPBBEOBAIBj/w/3iPeKIMR48oAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/2... Discriminator Loss: 1.4033... Generator Loss: 0.7291
 Epoch 1/2... Discriminator Loss: 1.5540... Generator Loss: 0.4925
@@ -18728,7 +18793,9 @@ Epoch 1/2... Discriminator Loss: 1.6061... Generator Loss: 0.4114
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -19693,7 +19760,9 @@ QmCC
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/2... Discriminator Loss: 1.5394... Generator Loss: 0.4782
 Epoch 1/2... Discriminator Loss: 1.6551... Generator Loss: 0.3914
@@ -19709,7 +19778,9 @@ Epoch 1/2... Discriminator Loss: 1.6816... Generator Loss: 0.3605
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -20580,7 +20651,9 @@ TkSuQmCC
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/2... Discriminator Loss: 1.4673... Generator Loss: 0.6124
 Epoch 1/2... Discriminator Loss: 1.4539... Generator Loss: 1.1555
@@ -20596,7 +20669,9 @@ Epoch 1/2... Discriminator Loss: 1.5576... Generator Loss: 0.5558
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -21375,7 +21450,9 @@ JOzChQsXA4RLwi5cuHAxQPz/UnMT0ltiLnkAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/2... Discriminator Loss: 1.9614... Generator Loss: 0.2579
 Epoch 1/2... Discriminator Loss: 1.4582... Generator Loss: 0.8463
@@ -21391,7 +21468,9 @@ Epoch 1/2... Discriminator Loss: 1.6187... Generator Loss: 1.5321
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -22183,7 +22262,9 @@ SNiBAwcOhgiHhB04cOBgiPj/Aaa95vDVjHO1AAAAAElFTkSuQmCC
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/2... Discriminator Loss: 1.5136... Generator Loss: 0.4846
 Epoch 1/2... Discriminator Loss: 1.4030... Generator Loss: 0.9220
@@ -22199,7 +22280,9 @@ Epoch 1/2... Discriminator Loss: 1.5619... Generator Loss: 1.1834
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -23027,7 +23110,9 @@ OAiCwJFb9htpyX6t/m8AAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/2... Discriminator Loss: 1.4153... Generator Loss: 0.6654
 Epoch 1/2... Discriminator Loss: 1.4427... Generator Loss: 0.5951
@@ -23043,7 +23128,9 @@ Epoch 1/2... Discriminator Loss: 1.3864... Generator Loss: 0.5724
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -23839,7 +23926,9 @@ ehL0AAAAAElFTkSuQmCC
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/2... Discriminator Loss: 1.6250... Generator Loss: 0.7167
 Epoch 1/2... Discriminator Loss: 1.4031... Generator Loss: 0.8424
@@ -23855,7 +23944,9 @@ Epoch 2/2... Discriminator Loss: 2.0022... Generator Loss: 1.9949
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -24634,7 +24725,9 @@ ixHCkrCFhYXFCGFJ2MLCwmKEsCRsYWFhMUL8/1KmzU5IP1dLAAAAAElFTkSuQmCC
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 2/2... Discriminator Loss: 1.4845... Generator Loss: 0.4752
 Epoch 2/2... Discriminator Loss: 1.3091... Generator Loss: 0.7335
@@ -24650,7 +24743,9 @@ Epoch 2/2... Discriminator Loss: 1.5628... Generator Loss: 0.4726
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -25443,7 +25538,9 @@ IRKRCQshRCIyYSGESEQmLIQQifwFBk+zDQ3TMG4AAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 2/2... Discriminator Loss: 1.5546... Generator Loss: 0.4232
 Epoch 2/2... Discriminator Loss: 1.5565... Generator Loss: 0.4704
@@ -25459,7 +25556,9 @@ Epoch 2/2... Discriminator Loss: 1.3303... Generator Loss: 0.7932
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -26272,7 +26371,9 @@ QgiRiExYCCESkQkLIUQivwFIAcXe9fmdzQAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 2/2... Discriminator Loss: 1.8487... Generator Loss: 0.2976
 Epoch 2/2... Discriminator Loss: 1.3332... Generator Loss: 0.8248
@@ -26288,7 +26389,9 @@ Epoch 2/2... Discriminator Loss: 1.5566... Generator Loss: 0.4766
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -27109,7 +27212,9 @@ gn4Am2Q07YOoXJAAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 2/2... Discriminator Loss: 1.5435... Generator Loss: 0.4539
 Epoch 2/2... Discriminator Loss: 1.8570... Generator Loss: 2.1928
@@ -27125,7 +27230,9 @@ Epoch 2/2... Discriminator Loss: 1.5167... Generator Loss: 1.1161
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -27926,7 +28033,9 @@ fURIwiFChAjRR4QkHCJEiBB9REjCIUKECNFH/P821uXOBOmhQAAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 2/2... Discriminator Loss: 1.3508... Generator Loss: 0.8282
 Epoch 2/2... Discriminator Loss: 1.9495... Generator Loss: 0.2840
@@ -27942,7 +28051,9 @@ Epoch 2/2... Discriminator Loss: 1.7912... Generator Loss: 0.3041
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -28713,7 +28824,9 @@ Lly4cNFHuCTswoULF32ES8IuXLhw0Uf8/zNLM3XF/kYPAAAAAElFTkSuQmCC
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 2/2... Discriminator Loss: 2.0169... Generator Loss: 0.3054
 Epoch 2/2... Discriminator Loss: 1.8924... Generator Loss: 0.2956
@@ -28729,7 +28842,9 @@ Epoch 2/2... Discriminator Loss: 1.5159... Generator Loss: 0.5029
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -29510,7 +29625,9 @@ Rbgk7MKFCxdThEvCLly4cDFFuCTswoULF1OES8IuXLhwMUW4JOzChQsXU4RLwi5cuHAxRfz/GLDE
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 2/2... Discriminator Loss: 1.7084... Generator Loss: 0.3807
 Epoch 2/2... Discriminator Loss: 2.0150... Generator Loss: 2.4516
@@ -29526,7 +29643,9 @@ Epoch 2/2... Discriminator Loss: 1.7574... Generator Loss: 2.1684
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -30196,7 +30315,9 @@ rgAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 2/2... Discriminator Loss: 1.3477... Generator Loss: 0.5846
 Epoch 2/2... Discriminator Loss: 0.8398... Generator Loss: 1.2874
@@ -30212,7 +30333,9 @@ Epoch 2/2... Discriminator Loss: 1.0748... Generator Loss: 0.8913
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -30984,7 +31107,9 @@ McIhYQcOHDgYIxwSduDAgYMx4v8HsBmkYyPD64QAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 2/2... Discriminator Loss: 1.4368... Generator Loss: 0.5457
 Epoch 2/2... Discriminator Loss: 2.0287... Generator Loss: 0.2386
@@ -31023,7 +31148,9 @@ Epoch 2/2... Discriminator Loss: 1.1415... Generator Loss: 1.2739
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -31032,7 +31159,9 @@ Epoch 2/2... Discriminator Loss: 1.1415... Generator Loss: 1.2739
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -31494,7 +31623,7 @@ EFikfMGr4f0AAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Note">Note<a class="anchor-link" href="#Note">&#182;</a></h3><p><strong>I just submit the results during the training process. I did not train all pictures here since it takes a very long time, and today is the deadline to pass the project, otherwise maybe I cannot get the nanodegree. Hence hopefully my methods are correct although I did not run all images in CelebA dataset.</strong></p>
+<h3 id="Note">Note<a class="anchor-link" href="#Note">&#182;</a></h3><p><strong>I just scratch the results during the training process.</strong></p>
 
 </div>
 </div>
@@ -31532,7 +31661,9 @@ EFikfMGr4f0AAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/1... Discriminator Loss: 1.4705... Generator Loss: 12.7192
 Epoch 1/1... Discriminator Loss: 0.5383... Generator Loss: 21.8431
@@ -31548,7 +31679,9 @@ Epoch 1/1... Discriminator Loss: 2.9151... Generator Loss: 0.1868
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -33243,7 +33376,9 @@ Azhik3piAAAAAElFTkSuQmCC
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/1... Discriminator Loss: 1.9085... Generator Loss: 0.9667
 Epoch 1/1... Discriminator Loss: 1.3194... Generator Loss: 1.6214
@@ -33259,7 +33394,9 @@ Epoch 1/1... Discriminator Loss: 1.4534... Generator Loss: 1.0164
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -35927,7 +36064,9 @@ q53Q1iC82mqrrXZCW4PwaqutttoJ7f8D8S+8wgnoIjcAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/1... Discriminator Loss: 1.2739... Generator Loss: 1.6088
 Epoch 1/1... Discriminator Loss: 1.3567... Generator Loss: 0.7688
@@ -35943,7 +36082,9 @@ Epoch 1/1... Discriminator Loss: 1.5372... Generator Loss: 1.1033
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -38839,7 +38980,9 @@ AAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/1... Discriminator Loss: 1.1903... Generator Loss: 1.7623
 Epoch 1/1... Discriminator Loss: 1.4209... Generator Loss: 0.6873
@@ -38855,7 +38998,9 @@ Epoch 1/1... Discriminator Loss: 1.5665... Generator Loss: 0.7929
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -41526,7 +41671,9 @@ tm7rtm7rEdctCN/Wbd3WbT3iugXh27qt27qtR1y3IHxbt3Vbt/WI6xaEb+u2buu2HnHdgvBt3dZt
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/1... Discriminator Loss: 1.4681... Generator Loss: 0.8766
 Epoch 1/1... Discriminator Loss: 1.4503... Generator Loss: 0.6500
@@ -41542,7 +41689,9 @@ Epoch 1/1... Discriminator Loss: 1.4622... Generator Loss: 0.7217
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -44253,7 +44402,9 @@ gIhGOCIiIiIg/g2s3rNIT3gmPgAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/1... Discriminator Loss: 1.5256... Generator Loss: 0.7603
 Epoch 1/1... Discriminator Loss: 1.5910... Generator Loss: 0.5726
@@ -44269,7 +44420,9 @@ Epoch 1/1... Discriminator Loss: 1.3845... Generator Loss: 0.9808
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -46974,7 +47127,9 @@ TkSuQmCC
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/1... Discriminator Loss: 1.4172... Generator Loss: 0.9522
 Epoch 1/1... Discriminator Loss: 1.5804... Generator Loss: 0.7590
@@ -46990,7 +47145,9 @@ Epoch 1/1... Discriminator Loss: 1.4891... Generator Loss: 0.8068
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -49708,7 +49865,9 @@ goKMKCJcUFBQkBH/AVfpOke5GEQVAAAAAElFTkSuQmCC
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/1... Discriminator Loss: 1.4650... Generator Loss: 0.8298
 Epoch 1/1... Discriminator Loss: 1.3988... Generator Loss: 0.9124
@@ -49724,7 +49883,9 @@ Epoch 1/1... Discriminator Loss: 1.4928... Generator Loss: 0.6373
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -52426,7 +52587,9 @@ JJwkSRJIJuEkSZJAMgknSZIEkkk4SZIkkP8CtM/qIbBBZcUAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/1... Discriminator Loss: 1.7376... Generator Loss: 0.4702
 Epoch 1/1... Discriminator Loss: 1.4248... Generator Loss: 0.6620
@@ -52442,7 +52605,9 @@ Epoch 1/1... Discriminator Loss: 1.5441... Generator Loss: 0.6683
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -55058,7 +55223,9 @@ VrQtCG+22WabrWhbEN5ss802W9H+Lxl0YgkqqB96AAAAAElFTkSuQmCC
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/1... Discriminator Loss: 1.4092... Generator Loss: 0.9407
 Epoch 1/1... Discriminator Loss: 1.6279... Generator Loss: 0.5565
@@ -55074,7 +55241,9 @@ Epoch 1/1... Discriminator Loss: 1.4665... Generator Loss: 0.7378
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 
 
 <div class="output_png output_subarea ">
@@ -57678,7 +57847,9 @@ RDbCGRkZGQsiG+GMjIyMBfF/VirEmKB2ehcAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/1... Discriminator Loss: 1.4780... Generator Loss: 0.6869
 </pre>
@@ -57721,4 +57892,8 @@ RDbCGRkZGQsiG+GMjIyMBfF/VirEmKB2ehcAAAAASUVORK5CYII=
     </div>
   </div>
 </body>
+
+ 
+
+
 </html>
