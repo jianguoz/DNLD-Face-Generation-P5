@@ -1,5 +1,6 @@
 # DLND_Face-Generation-P5
-**Jianguo Zhang, May 22, 2017**
+**Jianguo Zhang, May 22, 2017(updated on May 25, 2017)**
+
 
 This project uses generative adversarial networks(GAN) to generate new images of faces using [Large-scale CelebFaces Attributes (CelebA) Dataset](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html). 
  
